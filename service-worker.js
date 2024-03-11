@@ -1,20 +1,26 @@
-self.addEventListener('install', (event) => {
+const CACHE_NAME = 'calculadora-area-terreno-cache-v1';
+const urlsToCache = [
+  '/',
+  'index.html',
+  'script.js',
+  'style.css'
+];
+
+self.addEventListener('install', event => {
   event.waitUntil(
-    caches.open('calculadora-v1').then((cache) => {
-      return cache.addAll([
-        '/index.html',
-        '/style.css',
-        '/script.js',
-        '/icon.png' // Adicione todos os arquivos que deseja serem armazenados em cache
-      ]);
-    })
+    caches.open(CACHE_NAME)
+      .then(cache => cache.addAll(urlsToCache))
   );
 });
 
-self.addEventListener('fetch', (event) => {
+self.addEventListener('fetch', event => {
   event.respondWith(
-    caches.match(event.request).then((response) => {
-      return response || fetch(event.request);
-    })
+    caches.match(event.request)
+      .then(response => {
+        if (response) {
+          return response;
+        }
+        return fetch(event.request);
+      })
   );
 });
