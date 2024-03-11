@@ -5,15 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora de área de Terreno</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Adicione o link para o manifest -->
     <link rel="manifest" href="manifest.json">
-    <!-- Adicione o script do service worker -->
     <script>
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('/service-worker.js');
-            });
-        }
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/service-worker.js');
+        });
+      }
     </script>
 </head>
 <body>
