@@ -1,0 +1,63 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1e8b5e;
+    color: white;
+}
+
+main {
+    width: 90%; /* Alterado para se ajustar melhor em dispositivos móveis */
+    max-width: 500px; /* Adicionado para limitar a largura máxima em dispositivos maiores */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px; /* Adicionado para criar um espaço entre as bordas e o conteúdo */
+    border-radius: 10px; /* Adicionado para suavizar as bordas */
+    background-color: rgba(0, 0, 0, 0.5); /* Adicionado para melhorar a legibilidade do texto */
+}
+
+.divFrente,
+.divFundo,
+.divEsquerda,
+.divDireita,
+.divCalc,
+.divmetros {
+    width: 100%; /* Alterado para preencher completamente a largura do elemento pai */
+}
+
+input,
+button {
+    padding: 10px;
+    font-size: 20px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    width: 100%; /* Alterado para preencher completamente a largura do elemento pai */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adicionado para dar uma aparência mais elevada */
+}
+
+button {
+    cursor: pointer;
+    background-color: #232027;
+    color: white;
+}
+
+@media (max-width: 500px) {
+    body,
+    input,
+    button {
+        font-size: 15px;
+    }
+}
